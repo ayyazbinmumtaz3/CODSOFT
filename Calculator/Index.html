@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" href="https://fonts.googleapis.com/css?family=Trirong">
+  <title>Codsoft Internship</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="heading-block">
+      <h4 class="heading">Codsoft | Level 1 - Task 2</h4>
+      <h1 class="heading">Calculator</h1>
+    </div>
+    <div class="calculator">
+      <input type="text" id="display" class="display">
+      <div id="buttons">
+        <button type="button" class="number" value="7">7</button>
+        <button type="button" class="number" value="8">8</button>
+        <button type="button" class="number" value="9">9</button>
+        <button type="button" class="operator" value="/">/</button>
+        <br>
+        <button type="button" class="number" value="4">4</button>
+        <button type="button" class="number" value="5">5</button>
+        <button type="button" class="number" value="6">6</button>
+        <button type="button" class="operator" value="*">*</button>
+        <br>
+        <button type="button" class="number" value="1">1</button>
+        <button type="button" class="number" value="2">2</button>
+        <button type="button" class="number" value="3">3</button>
+        <button type="button" class="operator" value="-">-</button>
+        <br>
+        <button type="button" class="number" value="0">0</button>
+        <button type="button" class="number" value=".">.</button>
+        <button type="button" class="operator" value="+">+</button>
+        <button type="button" id="equals" value="=">=</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const display = document.getElementById("display");
+    const buttons = document.getElementById("buttons");
+
+    buttons.addEventListener("click", function (event) {
+
+      const value = event.target.value;
+
+      if (!isNaN(value)) {
+        display.value += value;
+      }
+
+      else if (value === "." || value === "+" || value === "-" || value === "*" || value === "/") {
+        display.value += " " + value + " ";
+      }
+
+      else if (value === "=") {
+        display.value = eval(display.value);
+      }
+    });
+  </script>
+</body>
+
+</html>
