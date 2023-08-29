@@ -352,7 +352,6 @@ a:hover {
   padding: 30px;
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 
 .team {
@@ -370,7 +369,9 @@ a:hover {
 }
 
 .team h5 {
-  color: #3e94a0;
+  color: #1e3db3;
+  font-weight: 500;
+  text-align: center;
 }
 
 /* ---------------------------------Part 2----------------- */
