@@ -16,6 +16,7 @@
     </div>
     <div class="calculator">
       <input type="text" id="display" class="display">
+      <button type="button" id="clear" value="C">C</button>
       <div id="buttons">
         <button type="button" class="number" value="7">7</button>
         <button type="button" class="number" value="8">8</button>
@@ -42,25 +43,63 @@
 
 
   <script>
+
     const display = document.getElementById("display");
     const buttons = document.getElementById("buttons");
 
-    buttons.addEventListener("click", function (event) {
+    const clearButton = document.getElementById("clear");
 
+    clearButton.addEventListener("click", function () {
+      display.value = "";
+    });
+
+    buttons.addEventListener("click", function (event) {
       const value = event.target.value;
 
-      if (!isNaN(value)) {
+      if (!isNaN(value) || value === ".") {
         display.value += value;
-      }
-
-      else if (value === "." || value === "+" || value === "-" || value === "*" || value === "/") {
+      } else if (value === "+" || value === "-" || value === "*" || value === "/") {
         display.value += " " + value + " ";
-      }
-
-      else if (value === "=") {
-        display.value = eval(display.value);
+      } else if (value === "=") {
+        try {
+          const expression = display.value;
+          const result = calculate(expression);
+          display.value = result;
+        } catch (error) {
+          display.value = "Error";
+        }
       }
     });
+
+    function calculate(expression) {
+      const operators = ["+", "-", "*", "/"];
+      const parts = expression.split(" ");
+      let total = parseFloat(parts[0]);
+
+      for (let i = 1; i < parts.length; i += 2) {
+        const operator = parts[i];
+        const operand = parseFloat(parts[i + 1]);
+
+        if (!isNaN(operand) && operators.includes(operator)) {
+          switch (operator) {
+            case "+":
+              total += operand;
+              break;
+            case "-":
+              total -= operand;
+              break;
+            case "*":
+              total *= operand;
+              break;
+            case "/":
+              total /= operand;
+              break;
+          }
+        }
+      }
+
+      return total.toFixed(10);
+    }
   </script>
 </body>
 
