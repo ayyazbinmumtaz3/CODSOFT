@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Codsoft</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!------------------------- Header -------------------------------->
+
+    <header class="header">
+        <nav id="navbar" class="navbar">
+            <div class="navbar-container container">
+                <ul class="menu-items">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#my-works">Portfolio</a></li>
+                    <li><a href="#contact-me">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="name">
+            <h1>Hi, I'm Ayyaz</h1>
+            <p>A Web Developer internee.</p>
+        </div>
+    </header>
+
+    <!---------------------- About Me --------------------------->
+
+    <section class="about-me" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="left-content">
+                    <div>
+                        <h1 class="about-heading">About Me</h1>
+                    </div>
+                    <img src="./Images/Cropped 1.png" alt="my-image" />
+                    <p>
+                        24-year-old computer science graduate from National College of Business Administration and
+                        Economics. Passionate about programming, problem-solving, and the perfect blend of tea and code.
+                        Turning lines of logic into innovative solutions.
+                    </p>
+                    <div class="check-work">
+                        <p>
+                            <a href="#my-works">Check out my work</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!---------------------------- Skills --------------------------->
+
+                <div class="skills">
+                    <div class="right-content">
+                        <div>
+                            <h1 class="skills-heading">My Skills</h1>
+                        </div>
+                        <div class="skills-bar">
+                            <div class="bar">
+                                <div class="info">
+                                    <span>HTML</span>
+                                </div>
+                                <div class="progress-line"><span class="html"></span></div>
+                                <div class="bar">
+                                    <div class="info">
+                                        <span>CSS</span>
+                                    </div>
+                                    <div class="progress-line"><span class="css"></span></div>
+                                    <div class="bar">
+                                        <div class="info">
+                                            <span>BOOTSTRAP</span>
+                                        </div>
+                                        <div class="progress-line"><span class="bootstrap"></span></div>
+                                        <div class="bar">
+                                            <div class="info">
+                                                <span>JAVASCRIPT</span>
+                                            </div>
+                                            <div class="progress-line"><span class="javascript"></span></div>
+                                            <div class="bar">
+                                                <div class="info">
+                                                    <span>C Programming</span>
+                                                </div>
+                                                <div class="progress-line"><span class="c"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!----------------------------------- My Work --------------------------->
+
+    <section id="my-works">
+        <div class="portfolio">
+            <div class="proj-heading">
+                <h1>Portfolio</h1>
+            </div>
+            <div class="portfolio-content container">
+                <div class="proj-1">
+                    <img src="./Images/proj-1.jpg">
+                    <div class="proj1-details">
+                        <h2>Restaurant Website UI</h2>
+                        <p>Built Using HTML & CSS</p>
+                        <button><a href="https://github.com/ayyazbinmumtaz3/Landing-page.git">View
+                                Source</a>
+                        </button>
+                        <button><a href="https://landing-page-codsoft.netlify.app/" target="blank">Try it Live</a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="proj-2">
+                    <img src="./Images/proj-2.jpg">
+                    <div class="proj2-details">
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <h2>Profile Card</h2>
+                        <p>Built Using HTML, CSS & JavaScript</p>
+                        <button><a href="https://github.com/ayyazbinmumtaz3/Calculator.git">View Source</a>
+                        </button>
+                        <button><a href="https://calculator-app-codsoft.netlify.app/">Try it Live</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!----------------------------------- Contact Me -------------------------->
+
+    <div class="contact" id="contact-me">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Contact Me</h2>
+                <p class="mail">
+                    ayyazbinmumtaz3@yahoo.com
+                </p>
+                <p class="links">Or find me on:</p>
+                <a href="https://www.linkedin.com/in/ayyazbinmumtaz/" target="blank">Linkedin</a>
+                <a href="https://github.com/ayyazbinmumtaz3">Github</a>
+                <a href="https://twitter.com/ayaazbinmumtaz">Twitter</a>
+                <a href="https://www.instagram.com/ayeentafay/">
+                    Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <script>var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+        }</script>
+</body>
+
+</html>
